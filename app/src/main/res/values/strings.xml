@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">rickandmortyapp</string>
+    <string name="home_title">Characters</string>
+    <string name="previous_button">Previous</string>
+    <string name="next_button">Next</string>
+    <string name="specie">"Specie: "</string>
+    <string name="status">"Status: "</string>
+    <string name="gender">"Gender: "</string>
+    <string name="first_seen_in">"First seen in: "</string>
+    <string name="last_known_location">"Last known location: "</string>
+</resources>
