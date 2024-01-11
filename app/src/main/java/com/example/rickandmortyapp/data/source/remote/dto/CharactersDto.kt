@@ -1,10 +1,11 @@
 package com.example.rickandmortyapp.data.source.remote.dto
 
 import com.example.rickandmortyapp.domain.model.Characters
+import com.google.gson.annotations.SerializedName
 
 data class CharactersDto(
-    val info: Info,
-    val results: List<Result>
+    val info: InfoDto,
+    @SerializedName("results") val results: List<ApiResult>
 )
 
 fun CharactersDto.toListCharacters():List<Characters>{

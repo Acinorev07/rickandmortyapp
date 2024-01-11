@@ -45,6 +45,14 @@ class DetailViewModel @Inject constructor(
                                 isLoading = true
                             )
                         }
+                        is Result.Error2 -> {
+                            // Manejar el caso Error2 aquí
+                            // Puedes acceder a la propiedad error de la siguiente manera:
+                            // result.error
+                        }
+                        else -> {
+                            // Manejar cualquier otra subclase que pueda aparecer en el futuro
+                        }
                     }
                 }
             }

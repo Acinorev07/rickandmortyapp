@@ -10,7 +10,7 @@ class GetCharactersUseCase @Inject constructor(
       private val repository: CharacterRepository
 ) {
 
-    operator fun invoke (page: Int): Flow<Result<List<Characters>>>{
-        return repository.getCharacters(page)
+    operator fun invoke (page: Int, name: String = ""): Flow<Result<List<Characters>>>{
+        return repository.getCharacters(page, name)
     }
 }

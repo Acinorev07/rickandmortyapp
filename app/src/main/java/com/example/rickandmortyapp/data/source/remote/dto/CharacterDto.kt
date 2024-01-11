@@ -16,7 +16,7 @@ data class CharacterDto(
     val type: String,
     val url: String
 )
-fun CharacterDto.toCharacter():Character{
+fun CharacterDto.toCharacter(): Character {
     return Character(
         id = id,
         name = name,

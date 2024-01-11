@@ -1,6 +1,6 @@
 package com.example.rickandmortyapp.data.source.remote.dto
 
-data class Result(
+data class ApiResult(
     val created: String,
     val episode: List<String>,
     val gender: String,
