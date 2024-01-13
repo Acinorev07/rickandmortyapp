@@ -13,6 +13,6 @@ interface CharactersDao {
     fun getCharacter(name:String, limit: Int, offset: Int): Flow<List<CachedCharacters>>
 
     //Metodo para insertar personajes en la base de datos local
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertCharacter(character: List<CachedCharacters>)
 }
