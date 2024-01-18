@@ -27,3 +27,11 @@ Además, la aplicación incluye una barra de búsqueda que permite filtrar los p
 ## Futuras mejoras
 
 Este proyecto está en constante desarrollo. Las futuras actualizaciones incluirán más características y mejoras en la funcionalidad existente.
+
+![Imagen del la pantalla principal de la aplicacion rick and morty](https://github.com/Acinorev07/rickandmortyapp/blob/master/images/WhatsApp%20Image%202024-01-18%20at%2012.52.30%20PM%20(1).jpeg)
+
+![Imagen del componente lateral de la aplicacion rick and morty](https://github.com/Acinorev07/rickandmortyapp/blob/master/images/WhatsApp%20Image%202024-01-18%20at%2012.52.30%20PM.jpeg)
+
+![Imagen de la barra de busqueda de la aplicacion rick and morty](https://github.com/Acinorev07/rickandmortyapp/blob/master/images/WhatsApp%20Image%202024-01-18%20at%2012.52.29%20PM.jpeg)
+
+![Imagen de la pantalla de detalles de la aplicacion rick and morty](https://github.com/Acinorev07/rickandmortyapp/blob/master/images/WhatsApp%20Image%202024-01-18%20at%2012.52.08%20PM.jpeg)
