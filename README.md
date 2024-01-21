@@ -29,9 +29,9 @@ Además, la aplicación incluye una barra de búsqueda que permite filtrar los p
 Este proyecto está en constante desarrollo. Las futuras actualizaciones incluirán más características y mejoras en la funcionalidad existente.
 
 ## Doy asistencia en la configuracion del gradle: 
--** whatsapp 3105143063 **.
--** glogic9605@gmail.com **.
--** facunap@unal.edu.co **.
+- **whatsapp 3105143063**
+- **glogic9605@gmail.com**
+- **facunap@unal.edu.co**
 
 ![Imagen del la pantalla principal de la aplicacion rick and morty](https://github.com/Acinorev07/rickandmortyapp/blob/master/images/WhatsApp%20Image%202024-01-18%20at%2012.52.30%20PM%20(1).jpeg)
 
