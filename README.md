@@ -29,7 +29,7 @@ Además, la aplicación incluye una barra de búsqueda que permite filtrar los p
 Este proyecto está en constante desarrollo. Las futuras actualizaciones incluirán más características y mejoras en la funcionalidad existente.
 
 ## Doy asistencia en la configuracion del gradle: 
-- **whatsapp 3105143063**
+- **whatsapp +57 3105143063**
 - **glogic9605@gmail.com**
 - **facunap@unal.edu.co**
 
