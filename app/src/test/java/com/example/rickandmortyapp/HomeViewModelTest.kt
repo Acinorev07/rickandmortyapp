@@ -19,13 +19,14 @@ import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.test.TestCoroutineDispatcher
+import kotlinx.coroutines.test.UnconfinedTestDispatcher
+import org.assertj.core.api.Assertions.assertThat
 import org.junit.rules.TestWatcher
 import org.junit.runner.Description
 
 @ExperimentalCoroutinesApi
 class MainCoroutineRule(
-    private val testDispatcher: CoroutineDispatcher = kotlinx.coroutines.test.TestCoroutineDispatcher()
+    private val testDispatcher: CoroutineDispatcher = UnconfinedTestDispatcher()
 ) : TestWatcher() {
 
     override fun starting(description: Description) {
@@ -55,9 +56,9 @@ internal class HomeViewModelTest {
     @Before
     fun onBefore() {
         MockKAnnotations.init(this)
+
         homeViewModel = HomeViewModel(getCharactersUseCase)
 
-        // Utiliza Dispatchers.Unconfined en lugar de Dispatchers.Main
         Dispatchers.setMain(Dispatchers.Unconfined)
     }
 
@@ -67,27 +68,56 @@ internal class HomeViewModelTest {
     }
 
     @Test
-    fun `When the HomeViewModel is started, the use case returns the characters and saves them in the mutableStateOf state, to be displayed on the main screen`(): Unit =
-        runTest {
-            // tu lógica de prueba aquí
+    fun `When the HomeViewModel is started, the use case returns the characters of the page 1 and saves them in the mutableStateOf state, to be displayed on the main screen`(): Unit= runTest {
+        // Given
+        val initialPage = 1
+        val name: String = ""
+        val expectedCharacters = listOf(
+            Characters(1, "nameCharacter1", "Human", "image1"),
+            Characters(2, "nameCharacter2", "Alien", "image2"),
+            Characters(3, "nameCharacters3", "Animal", "image3")
+        )
 
+        coEvery { getCharactersUseCase(
+            initialPage,
+            //name
+        ) } returns flowOf(
+            Result.Loading(),
+            Result.Success(expectedCharacters)
+        )
+        // When
+            homeViewModel.getCharacters(increase = false)
+        // Then
+        assertThat(homeViewModel.state.characters).isEqualTo(expectedCharacters)
+    }
+    @Test
+    fun `When the HomeViewModel is started, the use case returns the characters of the page 2 and saves them in the mutableStateOf state, to be displayed on the main screen`(): Unit= runTest {
+        // Given
+        val initialPage = 1
+        val name: String = ""
+        val expectedCharacters = listOf(
+            Characters(1, "nameCharacter1", "Human", "image1"),
+            Characters(2, "nameCharacter2", "Alien", "image2"),
+            Characters(3, "nameCharacters3", "Animal", "image3")
+        )
+        val nextPage = 2
 
-            // Given
-            val page = 1
-            val listCharacters = listOf(
-                Characters(1, "nameCharacter1", "Human", "image1"),
-                Characters(2, "nameCharacter2", "Alien", "image2"),
-                Characters(3, "nameCharacters3", "Animal", "image3")
-            )
-            val expected = Result.Success(listCharacters)
-            coEvery { getCharactersUseCase(page) } returns flowOf(expected)
+        val expectedCharacters2 = listOf(
+            Characters(4, "nameCharacter4", "Human", "image4"),
+            Characters(5, "nameCharacter5", "Alien", "image5"),
+            Characters(6, "nameCharacters6", "Animal", "image6")
+        )
 
-            // When
-            homeViewModel.getCharacters(true)
-
-            println("ViewModel Characters: ${homeViewModel.state.characters}")
-            println("Expected Characters: $listCharacters")
-            assert(homeViewModel.state.characters == listCharacters)
-        }
-
+        coEvery { getCharactersUseCase(
+            nextPage,
+            //name
+        ) } returns flowOf(
+            Result.Loading(),
+            Result.Success(expectedCharacters2)
+        )
+        // When
+        homeViewModel.getCharacters(increase = true)
+        // Then
+        assertThat(homeViewModel.state.characters).isEqualTo(expectedCharacters2)
+    }
 }
