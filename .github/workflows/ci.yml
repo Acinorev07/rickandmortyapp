@@ -20,6 +20,6 @@ jobs:
           cache: gradle
 
       - name: setup Gradle
-        uses: gradle/gradle-build-actions@v2
+        uses: gradle/wrapper-validation-action@v1
       - name: Build app
         run: ./gradlew assemble
