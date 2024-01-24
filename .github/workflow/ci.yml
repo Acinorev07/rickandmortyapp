@@ -16,7 +16,7 @@ jobs:
 
         uses: actions/setup-java@v3
 
-        whit:
+        with:
           java-version: '11'
           distribution: 'temurin'
           cache: gradle
