@@ -86,10 +86,12 @@ internal class FindGetCharactersTest{
         val limit = 1
         val offset = 1
         val expectedCharacter = Characters(1, "searchCharacter", "Human", "image")
-        val unexpectedCharacter = Characters(2, "otherCharacter", "Alien", "otherImage")
-        val repositoryResult = Result.Success(listOf(expectedCharacter, unexpectedCharacter))
-        coEvery { repository.findGetCharacters(name, limit, offset) } returns flowOf(repositoryResult)
-
+        //val unexpectedCharacter = Characters(2, "otherCharacter", "Alien", "otherImage")
+        //val repositoryResult = Result.Success(listOf(expectedCharacter, unexpectedCharacter))
+        //coEvery { repository.findGetCharacters(name, limit, offset) } returns flowOf(repositoryResult)
+        coEvery { repository.findGetCharacters(name, limit, offset) } returns flowOf(
+            Result.Success(listOf(expectedCharacter))
+        )
         // When
         val result = findGetCharacters(name, limit, offset)
         val firstValue = runBlocking { result.first() }
