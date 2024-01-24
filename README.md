@@ -40,3 +40,4 @@ Este proyecto está en constante desarrollo. Las futuras actualizaciones incluir
 ![Imagen de la barra de busqueda de la aplicacion rick and morty](https://github.com/Acinorev07/rickandmortyapp/blob/master/images/WhatsApp%20Image%202024-01-18%20at%2012.52.29%20PM.jpeg)
 
 ![Imagen de la pantalla de detalles de la aplicacion rick and morty](https://github.com/Acinorev07/rickandmortyapp/blob/master/images/WhatsApp%20Image%202024-01-18%20at%2012.52.08%20PM.jpeg)
+![Imagen de la integracion continua de la aplicacion rick and morty](https://github.com/Acinorev07/rickandmortyapp/blob/master/images/Test%20CICD.jpg)
